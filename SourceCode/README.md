@@ -34,11 +34,11 @@
 
 ## 创建项目
 
-![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0301_01.jpg)
+![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0301_01.jpg)
 
 - 设置项目名称、存放地点、GroupId和ArtifactId：
 
-![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0301_02.jpg)
+![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0301_02.jpg)
 
 
 
@@ -50,11 +50,11 @@
 
 点击左下角的【更多图形】进行设置：
 
-![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0301_03.jpg)
+![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0301_03.jpg)
 
 ### 绘制图形
 
-![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0301_04.jpg)
+![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0301_04.jpg)
 
 
 
@@ -297,21 +297,21 @@ coderdream@MacBook-Pro thrift-test %
 
 先删除src文件夹，然后创建Python的Module：
 
-![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0303_01.jpg)
+![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0303_01.jpg)
 
 ##    给IDEA安装Python插件
 
 - 进入【Preference...】菜单：
 
-![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0303_02.jpg)
+![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0303_02.jpg)
 
 - 选择【Plugins】-》【Marketplace】，然后输入【Python】，选择找的的【Python】后，点击【Install】：
 
-![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0303_03.jpg)
+![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0303_03.jpg)
 
 - 安装完成后即可新建Python类型的New Module了（Module SDK在此之前要先安装）：
 
-![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0303_04.jpg)
+![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0303_04.jpg)
 
 
 
