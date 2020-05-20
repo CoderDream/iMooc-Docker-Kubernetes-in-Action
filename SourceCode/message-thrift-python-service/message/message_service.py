@@ -1,8 +1,18 @@
+# coding: utf-8
 from message.api import MessageService
 from thrift.transport import TSocket
 from thrift.transport import TTransport
 from thrift.protocol import TBinaryProtocol
 from thrift.server import TServer
+
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
+
+#sender = 'acoder@126.com'
+#authCode = ''
+sender = 'imoocd@163.com'
+authCode = 'aA111111'
 
 class MessageServiceHandler:
     def sendMobileMessage(self, mobile, message):
@@ -12,7 +22,7 @@ class MessageServiceHandler:
          - message
 
         """
-        print("sendMobileMessage")
+        print("sendMobileMessage, mobile: " + mobile + ", message: " + message)
         return True
 
     def sendEmailMessage(self, email, message):
@@ -22,8 +32,21 @@ class MessageServiceHandler:
          - message
 
         """
-        print("sendEmailMessage")
-        return True
+        print("sendEmailMessage, email: " + email + ", message: " + message)
+        messageObj = MIMEText(message, "plain", "utf-8")
+        messageObj['From'] = sender
+        messageObj['To'] = email
+        messageObj['Subject'] = Header('慕课网邮件', 'utf-8')
+        try:
+            smtpObj = smtplib.SMTP('smpt.163.com')
+            smtpObj.login(sender, authCode)
+            smtpObj.sendmail(sender, [email], messageObj.as_string())
+
+            return True
+        except smtplib.SMTPException as ex:
+            print("send mail failed")
+            print(ex)
+            return False
 
 if __name__ == '__main__':
     handler = MessageServiceHandler()

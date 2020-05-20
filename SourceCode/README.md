@@ -1,4 +1,8 @@
-# 用户服务
+
+
+# 服务
+
+## 用户服务
 
 - 用户登录
 - 用户注册
@@ -6,25 +10,55 @@
 - 无状态（无Session）
 - 单点登录
 
-# 课程服务
+## 课程服务
 
 - 登录验证
 - 课程的CURD
 
-# 信息服务
+## 信息服务
 
 - 发送邮件
 - 发送短信
 
-# 用户edgeservice
+## 用户edgeservice
 
-# 课程edgeservice
+## 课程edgeservice
 
-# API GATEWAY
+## API GATEWAY
 
 反向代理、服务路由
 
 
+
+# 3-1 微服务业务分析
+
+## 创建项目
+
+![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0301_01.jpg)
+
+- 设置项目名称、存放地点、GroupId和ArtifactId：
+
+![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0301_02.jpg)
+
+
+
+## 绘制UML图
+
+### 打开工具
+
+链接地址：[ProcessOn](https://processon.com/diagrams)
+
+点击左下角的【更多图形】进行设置：
+
+![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0301_03.jpg)
+
+### 绘制图形
+
+![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0301_04.jpg)
+
+
+
+# 3-2 Thrift安装与验证
 
 在IDEA中通过控制台，用brew安装python
 
@@ -258,4 +292,26 @@ coderdream@MacBook-Pro thrift-test % netstat -na|grep 9090
 tcp6       0      0  ::1.9090               *.*                    LISTEN
 coderdream@MacBook-Pro thrift-test %
 ```
+
+# 3-3 Python开发信息服务
+
+先删除src文件夹，然后创建Python的Module：
+
+![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0303_01.jpg)
+
+##    给IDEA安装Python插件
+
+- 进入【Preference...】菜单：
+
+![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0303_02.jpg)
+
+- 选择【Plugins】-》【Marketplace】，然后输入【Python】，选择找的的【Python】后，点击【Install】：
+
+![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0303_03.jpg)
+
+- 安装完成后即可新建Python类型的New Module了（Module SDK在此之前要先安装）：
+
+![](/Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/images/Ch03/ch0303_04.jpg)
+
+
 
