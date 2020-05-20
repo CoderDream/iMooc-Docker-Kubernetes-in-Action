@@ -295,11 +295,9 @@ coderdream@MacBook-Pro thrift-test %
 
 # 3-3 Python开发信息服务
 
-先删除src文件夹，然后创建Python的Module：
 
-![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0303_01.jpg)
 
-##    给IDEA安装Python插件
+## 给IDEA安装Python插件
 
 - 进入【Preference...】菜单：
 
@@ -313,5 +311,102 @@ coderdream@MacBook-Pro thrift-test %
 
 ![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0303_04.jpg)
 
+## 创建Python Module
 
+先删除src文件夹，然后创建Python的Module：
+
+![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0303_01.jpg)
+
+
+
+- a
+
+![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0303_05.jpg)
+
+- b
+
+![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0303_06.jpg)
+
+- c
+
+![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0303_07.jpg)
+
+- d
+
+![](https://github.com/CoderDream/iMooc-Docker-Kubernetes-in-Action/blob/master/images/Ch03/ch0303_08.jpg)
+
+
+
+```
+# coding: utf-8
+from message.api import MessageService
+from thrift.transport import TSocket
+from thrift.transport import TTransport
+from thrift.protocol import TBinaryProtocol
+from thrift.server import TServer
+
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
+
+#sender = 'acoder@126.com'
+#authCode = ''
+sender = 'imoocd@163.com'
+authCode = 'aA111111'
+
+class MessageServiceHandler:
+    def sendMobileMessage(self, mobile, message):
+        """
+        Parameters:
+         - mobile
+         - message
+
+        """
+        print("sendMobileMessage, mobile: " + mobile + ", message: " + message)
+        return True
+
+    def sendEmailMessage(self, email, message):
+        """
+        Parameters:
+         - email
+         - message
+
+        """
+        print("sendEmailMessage, email: " + email + ", message: " + message)
+        messageObj = MIMEText(message, "plain", "utf-8")
+        messageObj['From'] = sender
+        messageObj['To'] = email
+        messageObj['Subject'] = Header('慕课网邮件', 'utf-8')
+        try:
+            smtpObj = smtplib.SMTP('smpt.163.com')
+            smtpObj.login(sender, authCode)
+            smtpObj.sendmail(sender, [email], messageObj.as_string())
+
+            return True
+        except smtplib.SMTPException as ex:
+            print("send mail failed")
+            print(ex)
+            return False
+
+if __name__ == '__main__':
+    handler = MessageServiceHandler()
+    processor = MessageService.Processor(handler)
+    transport = TSocket.TServerSocket("localhost", "9090")
+    tfactory = TTransport.TFramedTransportFactory()
+    pfactory = TBinaryProtocol.TBinaryProtocolFactory()
+
+    server = TServer.TSimpleServer(processor, transport, tfactory, pfactory)
+    print("python thrift server start")
+    server.serve()
+    print("python thrift server exit")
+```
+
+
+
+在【Run】面板显示
+
+```
+/usr/local/bin/python3.8 /Users/coderdream/Documents/04_GitHub/iMooc-Docker-Kubernetes-in-Action/SourceCode/micro-service/message-thrift-python-service/message/message-service.py
+python thrift server start
+```
 
